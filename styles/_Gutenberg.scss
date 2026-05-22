@@ -55,7 +55,15 @@
 .wp-block-columns.wp-container-core-columns-is-layout-6c3b9179
   > .wp-block-column.has-black-background-color.has-background
   > .wp-block-group {
-  padding: 1.75rem 0 0 !important;
+  padding: 2rem 2rem 2.25rem !important;
+}
+
+@media (min-width: 782px) {
+  .wp-block-columns.wp-container-core-columns-is-layout-6c3b9179
+    > .wp-block-column.has-black-background-color.has-background
+    > .wp-block-group {
+    padding: 2.4rem 2.4rem 2.65rem !important;
+  }
 }
 
 .wp-block-columns.wp-container-core-columns-is-layout-6c3b9179 h3.wp-block-heading,
