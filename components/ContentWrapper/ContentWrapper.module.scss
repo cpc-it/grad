@@ -491,13 +491,13 @@
 
     @media (min-width: $breakpoint-small) {
       .wp-block-group.half-width:nth-child(odd) {
-        padding-left: calc(clamp(2rem, calc((100vw - #{$content-max-width}) / 2), 24rem) + 55px) !important;
+        padding-left: calc((100vw - min(83.333333vw, #{$content-max-width})) / 2 + 2rem) !important;
         padding-right: 5rem !important;
       }
 
       .wp-block-group.half-width:nth-child(even) {
         padding-left: 5rem !important;
-        padding-right: clamp(2rem, calc((100vw - #{$content-max-width}) / 2), 24rem) !important;
+        padding-right: calc((100vw - min(83.333333vw, #{$content-max-width})) / 2 + 2rem) !important;
       }
     }
 
