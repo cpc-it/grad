@@ -1,7 +1,7 @@
 /**
  * Default apply URL used by nearly all programs.
  */
-export const DEFAULT_PROGRAM_APPLY_LINK = 'https://www2.calstate.edu/apply';
+export const DEFAULT_PROGRAM_APPLY_LINK = 'https://calstate.cas.myliaison.com/applicant/login';
 
 /**
  * Program-specific one-off overrides keyed by Program URI.
