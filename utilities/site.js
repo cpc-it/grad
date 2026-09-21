@@ -16,9 +16,11 @@ function normalizePathname(pathname = '/') {
   return normalized || '/';
 }
 
+const PRODUCTION_SITE_URL = 'https://grad.calpoly.edu';
+
 export function getSiteUrl() {
   const siteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || process.env.NEXT_PUBLIC_WORDPRESS_URL || '';
+    process.env.NEXT_PUBLIC_SITE_URL || PRODUCTION_SITE_URL;
 
   return stripTrailingSlash(siteUrl);
 }

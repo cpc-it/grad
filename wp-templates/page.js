@@ -10,6 +10,8 @@ import {
   buildKeywordString,
   buildMetaDescription,
   formatProgramDisplayTitle,
+  getSiteUrl,
+  normalizeCanonicalUrl,
   pageTitle,
 } from 'utilities';
 import styles from 'styles/pages/_CoordinatorDirectory.module.scss';
@@ -432,10 +434,18 @@ export default function Component(props) {
     featuredImage?.node?.sourceUrl ||
     '/images/og-default.jpg';
 
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
-  const computedCanonical =
-    s?.canonical ||
-    (baseUrl && router?.asPath ? `${baseUrl}${router.asPath}` : undefined);
+  const baseUrl = getSiteUrl();
+  let canonicalPath = router?.asPath;
+
+  if (s?.canonical) {
+    try {
+      canonicalPath = new URL(s.canonical, baseUrl).pathname;
+    } catch {
+      canonicalPath = s.canonical;
+    }
+  }
+
+  const computedCanonical = normalizeCanonicalUrl(canonicalPath, baseUrl);
 
 
 

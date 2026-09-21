@@ -32,6 +32,7 @@ Copy `.env.local.sample` to `.env.local` and set the values for your environment
 Required variables:
 
 - `NEXT_PUBLIC_WORDPRESS_URL`: base URL of the connected WordPress site
+- `NEXT_PUBLIC_SITE_URL`: public URL of the frontend site, used for canonical links, sitemaps, and social metadata
 - `FAUST_SECRET_KEY`: Faust secret from WordPress
 
 Optional variables:
