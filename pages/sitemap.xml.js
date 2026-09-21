@@ -2,22 +2,7 @@ import { getSiteUrl, normalizeCanonicalUrl } from 'utilities';
 
 const SITEMAP_QUERY = `
   query SitemapEntries($first: Int!) {
-    pages(first: $first) {
-      nodes {
-        uri
-      }
-    }
-    posts(first: $first) {
-      nodes {
-        uri
-      }
-    }
-    programs(first: $first) {
-      nodes {
-        uri
-      }
-    }
-    projects(first: $first) {
+    contentNodes(first: $first) {
       nodes {
         uri
       }
@@ -64,10 +49,7 @@ async function getWordPressUrls() {
   }
 
   return [
-    ...(payload?.data?.pages?.nodes ?? []),
-    ...(payload?.data?.posts?.nodes ?? []),
-    ...(payload?.data?.programs?.nodes ?? []),
-    ...(payload?.data?.projects?.nodes ?? []),
+    ...(payload?.data?.contentNodes?.nodes ?? []),
   ]
     .map((node) => node?.uri)
     .filter(Boolean);
