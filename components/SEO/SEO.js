@@ -226,6 +226,10 @@ export default function SEO({
         {/* Core HTML/meta */}
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="google-site-verification"
+          content="YrOjQyIqDZwCoyXtIf9QN3yTlSaz_31m4zy9lmPnyh4"
+        />
         {themeColor && <meta name="theme-color" content={themeColor} />}
         <meta name="robots" content={robots} />
 
