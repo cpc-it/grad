@@ -36,7 +36,7 @@ module.exports = withFaust({
             value: 'bpgrad.wpenginepowered.com',
           },
         ],
-        destination: 'https://grad.calpoly.edu/:path*',
+        destination: 'https://cms.grad.calpoly.edu/:path*',
         permanent: true,
       },
     ];
