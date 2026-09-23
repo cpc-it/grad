@@ -26,7 +26,21 @@ module.exports = withFaust({
     defaultLocale: 'en',
   },
 
-
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'bpgrad.wpenginepowered.com',
+          },
+        ],
+        destination: 'https://grad.calpoly.edu/:path*',
+        permanent: true,
+      },
+    ];
+  },
 
   async headers() {
     return [
