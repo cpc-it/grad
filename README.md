@@ -48,6 +48,30 @@ Example:
 cp .env.local.sample .env.local
 ```
 
+### WP Engine Deployment
+
+Set `NEXT_PUBLIC_WORDPRESS_URL=https://cms.grad.calpoly.edu` in the WP Engine
+frontend application's environment variables, including the build environment.
+The local `.env.local` file is ignored by Git and does not configure deployment.
+Redeploy after changing the variable.
+
+If `faust build` reports that it cannot find a GraphQL endpoint at
+`https://bpgrad.wpenginepowered.com/index.php?graphql`, check this setting first.
+That hostname redirects to the CMS; a 301 redirect changes the GraphQL POST to a
+GET and drops the query body, causing Faust's endpoint health check to fail.
+Use the HTTPS CMS URL directly rather than bypassing the health check.
+
+To check the endpoint independently:
+
+```bash
+curl --fail-with-body --silent --show-error \
+  'https://cms.grad.calpoly.edu/index.php?graphql' \
+  --header 'Content-Type: application/json' \
+  --data '{"query":"{ __typename }"}'
+```
+
+A working endpoint returns `data.__typename` with the value `RootQuery`.
+
 ## Local Development
 
 Install dependencies:
