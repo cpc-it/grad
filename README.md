@@ -21,9 +21,12 @@ This repository contains the Next.js frontend for the Cal Poly Graduate Educatio
 
 ## Requirements
 
-- Node.js `>=20 <21`
+- Node.js `>=22 <23`
 - npm `>=10 <11`
 - A WordPress site with Faust and WPGraphQL configured
+
+WP Engine's builder supports Node.js 22 and 24. This project targets Node.js 22;
+use the same version locally to match deployment.
 
 ## Environment Variables
 
